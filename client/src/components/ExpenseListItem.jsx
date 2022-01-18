@@ -7,9 +7,8 @@ class ExpenseListItem extends React.Component {
     super(props);
 
     this.state = {
-      counter: 42
+      expense: props.expense
     };
-
 
   }
 
@@ -19,7 +18,7 @@ class ExpenseListItem extends React.Component {
     return (
 
       <div>
-        item text
+        {this.state.expense.title}
       </div>
     );
   }

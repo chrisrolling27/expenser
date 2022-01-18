@@ -120,6 +120,25 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 
+var mocky = [{
+  title: 'coasters',
+  cost: 12,
+  category: 'home',
+  vendor: 'Amazon',
+  notes: 'necessary for dishes and dusting'
+}, {
+  title: 'chicken',
+  cost: 5,
+  category: 'grocery',
+  vendor: 'Trader Joes',
+  notes: 'restaurant quality'
+}, {
+  title: 'book',
+  cost: 15,
+  category: 'entertainment',
+  vendor: 'Amazon',
+  notes: 'Maurices Strategikon'
+}];
 
 var App = /*#__PURE__*/function (_React$Component) {
   _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2___default()(App, _React$Component);
@@ -133,7 +152,7 @@ var App = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      counter: 42
+      expenses: mocky
     };
     return _this;
   }
@@ -146,7 +165,9 @@ var App = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, "App", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_ExpenseList_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], null));
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_ExpenseList_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        expenses: this.state.expenses
+      }));
     }
   }]);
 
@@ -204,7 +225,7 @@ var ExpenseList = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      counter: 42
+      expenses: props.expenses
     };
     return _this;
   }
@@ -212,7 +233,14 @@ var ExpenseList = /*#__PURE__*/function (_React$Component) {
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(ExpenseList, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, "Expense lister here");
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, "Expense lister here", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "listeds"
+      }, " ", this.state.expenses.map(function (expense, i) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_ExpenseListItem_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          expense: expense,
+          key: i
+        });
+      }), " "));
     }
   }]);
 
@@ -268,7 +296,7 @@ var ExpenseListItem = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      counter: 42
+      expense: props.expense
     };
     return _this;
   }
@@ -276,7 +304,7 @@ var ExpenseListItem = /*#__PURE__*/function (_React$Component) {
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(ExpenseListItem, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, "item text");
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, this.state.expense.title);
     }
   }]);
 

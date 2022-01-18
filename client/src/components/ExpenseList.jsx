@@ -8,18 +8,18 @@ class ExpenseList extends React.Component {
     super(props);
 
     this.state = {
-      counter: 42
+      expenses: props.expenses
     };
 
   }
-
-
 
   render() {
     return (
 
       <div>
         Expense lister here
+       <div className='listeds' > {this.state.expenses.map((expense, i) => <ExpenseListItem expense={expense}
+       key={i}/>)} </div>
       </div>
     );
   }
