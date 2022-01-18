@@ -1,16 +1,15 @@
 import React from 'react';
-
+import ExpenseList from './ExpenseList.jsx';
 
 class App extends React.Component {
 
   constructor(props) {
     super(props);
-    // Don't call this.setState() here!
+
     this.state = {
       counter: 42
     };
 
-    //this.onChange = this.onChange.bind(this);
   }
 
   componentDidMount() {
@@ -21,7 +20,8 @@ class App extends React.Component {
     return (
 
       <div>
-        Hello world
+        App
+        <ExpenseList />
       </div>
     );
   }
