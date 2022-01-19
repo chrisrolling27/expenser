@@ -8,3 +8,13 @@ body {
 .listeds {
   color: red
 }
+
+.scoreboard {
+  color: blue;
+  border-color: grey;
+  border-style: solid;
+  margin: 5%;
+  width: 250px;
+  height: 75px;
+  text-align: center;
+}

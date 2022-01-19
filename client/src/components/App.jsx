@@ -1,5 +1,6 @@
 import React from 'react';
 import ExpenseList from './ExpenseList.jsx';
+import ExpenseAdder from './ExpenseAdder.jsx';
 
 let mocky = [{
   title: 'coasters',
@@ -33,16 +34,21 @@ class App extends React.Component {
 
   }
 
-  componentDidMount() {
-    console.log('App mounted');
-  }
-
   render() {
+
+    let total = this.state.expenses.reduce((prev, current) => {
+      return prev + current.cost;
+    }, 0);
+
     return (
 
       <div>
+        <div className="scoreboard">
+        <div> Total cost: ${total} </div>
+        <div> Number of items: {this.state.expenses.length} </div>  </div>
 
         <ExpenseList expenses={this.state.expenses}/>
+        <ExpenseAdder />
       </div>
     );
   }

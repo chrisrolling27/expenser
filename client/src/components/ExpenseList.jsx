@@ -17,7 +17,7 @@ class ExpenseList extends React.Component {
     return (
 
       <div>
-        Expense lister here
+
        <div className='listeds' > {this.state.expenses.map((expense, i) => <ExpenseListItem expense={expense}
        key={i}/>)} </div>
       </div>
