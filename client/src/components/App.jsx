@@ -44,10 +44,10 @@ class App extends React.Component {
 
       <div>
         <div className="scoreboard">
-        <div> Total cost: ${total} </div>
-        <div> Number of items: {this.state.expenses.length} </div>  </div>
+          <div> Total cost: ${total} </div>
+        </div>
 
-        <ExpenseList expenses={this.state.expenses}/>
+        <ExpenseList expenses={this.state.expenses} />
         <ExpenseAdder />
       </div>
     );

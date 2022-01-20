@@ -167,7 +167,7 @@ var App = /*#__PURE__*/function (_React$Component) {
       }, 0);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "scoreboard"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, " Total cost: $", total, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, " Number of items: ", this.state.expenses.length, " "), "  "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_ExpenseList_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, " Total cost: $", total, " ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_ExpenseList_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {
         expenses: this.state.expenses
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_ExpenseAdder_jsx__WEBPACK_IMPORTED_MODULE_7__["default"], null));
     }
